@@ -1,13 +1,10 @@
-const readline = require('readline');
+const arg1 = process.argv[2];
+const arg2 = process.argv[3];
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-rl.question('Enter the first word: ', (first) => {
-  rl.question('Enter the second word: ', (second) => {
-    console.log(`${first} is ${second}`);
-    rl.close();
-  });
-});
+if (arg1 && arg2) {
+  console.log(`${arg1} is ${arg2}`);
+} else if (arg1 && !arg2) {
+  console.log(`${arg1} is undefined`);
+} else {
+  console.log("undefined is undefined");
+}
